@@ -1,7 +1,0 @@
----
-- name: Deploy Nginx Load Balancer
-  hosts: lbserver
-  become: true
-  roles:
-    - nginx
-    - loadbalancing

@@ -1,0 +1,29 @@
+---
+- name: Install docker and docker-compose
+  hosts: 
+    - webservers
+    - databaseserver
+  become: true
+  roles:
+    - docker
+
+- name: Web servers setup
+  hosts: webservers
+  become: true
+  roles:
+    - api
+    - web
+
+- name: Database server setup
+  hosts: databaseserver
+  become: true
+  roles:
+    - database
+
+- name: Nginx Load Balancer
+  hosts: lbserver
+  become: true
+  roles:
+    - nginx
+    - loadbalancing
+

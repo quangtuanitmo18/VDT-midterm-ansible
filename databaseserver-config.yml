@@ -1,7 +1,0 @@
----
-- name: Database server setup
-  hosts: databaseserver
-  become: true
-  roles:
-    - docker
-    - database
