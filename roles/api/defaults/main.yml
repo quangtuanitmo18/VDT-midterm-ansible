@@ -1,0 +1,6 @@
+---
+# defaults file for roles/api
+docker_image_name: "tuanquang1811/vdt-midterm-api:main-2e7cb9f"
+container_name: "vdt-midterm-api"
+host_port: "4000"
+container_port: "4000"

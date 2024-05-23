@@ -1,0 +1,8 @@
+---
+- name: Web servers setup
+  hosts: webservers
+  become: true
+  roles:
+    - docker
+    - api
+    - web

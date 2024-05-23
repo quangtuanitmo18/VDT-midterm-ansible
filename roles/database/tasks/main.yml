@@ -1,0 +1,24 @@
+---
+# tasks file for roles/database
+
+- name: Pull MongoDB Docker image
+  docker_image:
+    name: "{{ mongo_image }}"
+    source: pull
+    
+- name: Create MongoDB data volume
+  docker_volume:
+    name: "{{ mongo_image }}"
+
+- name: Run MongoDB Docker container
+  docker_container:
+    name: "{{ mongo_container_name }}"
+    image: "{{ mongo_image }}"
+    ports:
+      -  "{{ mongo_host_port }}:{{ mongo_container_port }}"
+    volumes:
+      - "{{ mongo_volume_name }}:/data/db"
+    env:
+      MONGO_INITDB_ROOT_USERNAME: "{{ mongo_initdb_root_username }}"
+      MONGO_INITDB_ROOT_PASSWORD: "{{ mongo_initdb_root_password }}"
+  

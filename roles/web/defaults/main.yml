@@ -1,0 +1,6 @@
+---
+# defaults file for roles/web
+docker_image_name: "tuanquang1811/vdt-midterm-web:main-0efee2e"
+container_name: "vdt-midterm-web"
+host_port: "80"
+container_port: "80"

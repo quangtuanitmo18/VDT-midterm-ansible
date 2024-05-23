@@ -1,0 +1,9 @@
+---
+# defaults file for roles/database
+mongo_image: "mongo:latest"
+mongo_container_name: "vdt-midterm-db"
+mongo_host_port: "27017"
+mongo_container_port: "27017"
+mongo_volume_name: "mongodb_data"
+mongo_initdb_root_username: "mongo_user"
+mongo_initdb_root_password: "mongo_password"

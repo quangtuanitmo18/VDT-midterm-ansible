@@ -1,0 +1,11 @@
+---
+# tasks file for roles/loadbalancing
+
+- name: Configure load balancing
+  template:
+    src: loadbalancing.conf.j2
+    dest: "{{ nginx_conf_path }}"
+    owner: tuan
+    group: tuan
+    mode: '0644'
+  notify: Reload nginx

@@ -1,0 +1,24 @@
+# defaults file for roles/loadbalancing
+
+nginx_conf_path: /etc/nginx/conf.d/loadbalancing.conf
+
+# List of api servers
+api_servers:
+  - name: app-server-1
+    address: 192.168.64.142
+    port: 4000
+  - name: app-server-2
+    address: 192.168.64.144
+    port: 4000
+
+# List of web servers
+web_servers:
+  - name: app-server-1
+    address: 192.168.64.142
+    port: 80
+  - name: app-server-2
+    address: 192.168.64.144
+    port: 80
+
+load_balancing_method: round-robin
+load_balancer_port: 80
