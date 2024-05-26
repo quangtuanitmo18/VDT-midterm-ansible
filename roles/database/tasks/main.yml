@@ -8,7 +8,7 @@
     
 - name: Create MongoDB data volume
   docker_volume:
-    name: "{{ mongo_image }}"
+    name: "{{ mongo_volume_name }}"
 
 - name: Run MongoDB Docker container
   docker_container:
